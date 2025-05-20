@@ -3,12 +3,12 @@ use std::io;
 
 fn hanoi(number: i32, src: i32, dest: i32, sub: i32, output: &mut String){
     if number == 1 {
-        writeln!(output, "{src} {dest}");
+        writeln!(output, "{src} {dest}").unwrap();
         return
     }
 
     hanoi(number - 1, src, sub, dest, output);
-    writeln!(output, "{src} {dest}");
+    writeln!(output, "{src} {dest}").unwrap();
     hanoi(number - 1, sub, dest, src, output);
 
     return
