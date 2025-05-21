@@ -1,4 +1,5 @@
 use std::io;
+use std::fmt::Write;
 
 fn main() {
     let mut input_line: String = String::new();
@@ -19,6 +20,8 @@ fn main() {
     io::stdin().read_line(&mut input_line).unwrap();
     let q: i32 = input_line.trim().parse().unwrap();
 
+    let mut output: String = String::new();
+
     for _ in 0..q {
         input_line.clear();
         io::stdin().read_line(&mut input_line).unwrap();
@@ -30,8 +33,9 @@ fn main() {
         a.swap(x, y);
 
         let res = checker(&a, n);
-        println!("{res}");
+        writeln!(output, "{res}").unwrap();
     }
+    println!("{output}");
 }
 
 fn checker(a: &Vec<i32>, n: usize) -> &'static str {
