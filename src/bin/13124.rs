@@ -1,5 +1,5 @@
-use std::io;
 use std::fmt::Write;
+use std::io;
 
 fn main() {
     let mut input_line: String = String::new();
@@ -10,11 +10,7 @@ fn main() {
 
     input_line.clear();
     io::stdin().read_line(&mut input_line).unwrap();
-    let mut a: Vec<i32> = input_line
-        .trim()
-        .split_whitespace()
-        .map(|x| x.parse::<i32>().unwrap() - 1)
-        .collect();
+    let mut a: Vec<i32> = input_line.trim().split_whitespace().map(|x| x.parse::<i32>().unwrap() - 1).collect();
 
     input_line.clear();
     io::stdin().read_line(&mut input_line).unwrap();
